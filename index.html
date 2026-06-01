@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mario & Niviasta - Wedding Invitation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bgm" loop>
+        <source src="back at one.mp3" type="audio/mpeg">
+    </audio>
+
+    <section id="opening">
+        <div class="parallax-layer" id="layer-back-img"></div>
+        <div class="parallax-layer" id="layer-bg"></div>
+        <div class="parallax-layer side-layer" id="layer-left"></div>
+        <div class="parallax-layer side-layer" id="layer-right"></div>
+        
+        <div class="opening-text-container">
+            <h2 class="serif">an adventure to wonderland awaits...</h2>
+        </div>
+
+        <div class="opening-footer">
+            <button id="enter-btn">CLICK TO ENTER</button>
+        </div>
+    </section>
+
+    <section id="homepage-trigger">
+        <nav class="top-nav" id="main-nav">
+            <div class="nav-logo">M&N</div>
+            <div class="nav-menu">
+                <a href="#story-transition" class="nav-link">Story</a>
+                <a href="#bride-groom" class="nav-link">Couple</a>
+                <a href="#venue" class="nav-link">Venue</a>
+                <a href="#rsvp" class="nav-rsvp-btn">Submit RSVP</a>
+            </div>
+        </nav>
+
+        <div id="homepage-pin-container">
+            <div class="scattered-gallery">
+                <img src="DSC00284.webp" class="sg-img sg-item" id="sg-1" alt="Gallery" onerror="this.style.display='none'">
+                <img src="DSC00339.webp" class="sg-img sg-item" id="sg-2" alt="Gallery" onerror="this.style.display='none'">
+                <img src="DSC00347.webp" class="sg-img sg-item" id="sg-3" alt="Gallery" onerror="this.style.display='none'">
+                <img src="DSC00384.webp" class="sg-img sg-item" id="sg-4" alt="Gallery" onerror="this.style.display='none'">
+            </div>
+
+            <div class="hero-image-wrapper">
+                <img src="DSC00329.webp" class="hero-bg-img" alt="Hero Background">
+                <div class="hero-overlay"></div>
+                
+                <div class="hero-content">
+                    <div class="hero-center">
+                        <h1 class="hero-names">Mario & Niviasta</h1>
+                        <p class="guest-name">Dear, [Guest Name]</p>
+                    </div>
+                    <div class="scroll-indicator">
+                        SCROLL TO EXPLORE <br> ↓
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story-transition">
+        <div class="transition-content">
+            <p class="serif">you're cordially invited to celebrate the story of...</p>
+            <h2 class="serif">our story</h2>
+        </div>
+    </section>
+
+    <section id="love-story">
+        <div class="story-block">
+            <h3>Across the Miles</h3>
+            <p>For years, we were just two friends separated by the distance between Indonesia and Dubai. We talked every single day, comfortably sharing our heaviest burdens, our dreams, and our most random stories.</p>
+        </div>
+        <div class="story-block">
+            <h3>Against the Odds</h3>
+            <p>In early 2024, we realized friendship simply wasn't enough anymore. We started dating and faced the LDR head-on. We cried, we laughed, and through it all, we built a bond that no distance could ever break.</p>
+        </div>
+        <div class="story-block">
+            <h3>The Perfect Balance</h3>
+            <p>Being the same age and both the firstborns in our families, we were so used to standing strong alone. Together, we finally found a place to let our guards down. We became each other's ultimate support system, filling the voids we had carried for so long.</p>
+        </div>
+        <div class="story-block">
+            <h3>Our Next Chapter</h3>
+            <p>On August 15, 2026, we will finally take our vows as lifelong partners. From the friends who shared everything to soulmates sharing a lifetime, we promise to be each other's constant. Through joy and sorrow, in sickness and in health, and no matter what circumstances life may bring, we will always stand by each other's side.</p>
+        </div>
+    </section>
+
+    <section id="bride-groom" class="section-padding">
+        <div class="couple-container">
+            <div class="person" id="groom-sec">
+                <div class="polaroid-frame groom-frame">
+                    <img src="DSC00268.jpg" alt="Mario" onerror="this.src='https://via.placeholder.com/300x400/0F0F0F/FDFFF5?text=Mario'">
+                </div>
+                <div class="person-details groom-details">
+                    <h2 class="serif">Mario Salomo</h2>
+                    <p class="fade-text">
+                        Mario Salomo Nicholaas Rambing,<br>
+                        Son of Mr. Joost Cornelius Rambing & Mrs. Nani Maryani<br>
+                        @mariosalomoo_
+                    </p>
+                </div>
+            </div>
+            <div class="person" id="bride-sec">
+                <div class="polaroid-frame bride-frame">
+                    <img src="DSC00254.jpg" alt="Niviasta" onerror="this.src='https://via.placeholder.com/300x400/0F0F0F/FDFFF5?text=Niviasta'">
+                </div>
+                <div class="person-details bride-details">
+                    <h2 class="serif">Niviasta</h2>
+                    <p class="fade-text">
+                        Niviasta,<br>
+                        [Daughter of Mr. ... & Mrs. ...]<br>
+                        @niviasta_
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery-trigger" style="height: 300vh;">
+        <div id="gallery-pin">
+            <div class="gallery-split">
+                <div class="gallery-info">
+                    <h2 class="serif" style="font-size: 2.5rem; margin-bottom: 20px;">chapter one:<br>how we met</h2>
+                    <p style="color: var(--grey); line-height: 1.8;">We met at university, became fast friends, and eventually realized the best parts of every week were the parts we spent together.</p>
+                </div>
+                <div class="gallery-stack">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="venue" class="section-padding">
+        <div class="venue-grid">
+            <div class="venue-card">
+                <p class="venue-subtitle">HOLY MATRIMONY</p>
+                <h3>ST. PAULUS CATHOLIC CHURCH DEPOK</h3>
+                <p class="venue-time">Saturday, August 15th, 2026<br>09:00 AM - Onwards</p>
+                <p class="venue-address">Jl. Melati No.4, Pancoran Mas, Depok City, West Java 16431</p>
+                <a href="https://www.google.com/maps/place/Gereja+Katolik+Paroki+Santo+Paulus,+Depok/@-6.401094,106.821242,8963m/data=!3m1!1e3!4m6!3m5!1s0x2e69e95738c8d4d5:0xc9f90497b45ba6f9!8m2!3d-6.4010938!4d106.8212418!16s%2Fg%2F113h1g9q7?hl=id&entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-link">OPEN MAP</a>
+            </div>
+            <div class="venue-card">
+                <p class="venue-subtitle">WEDDING RECEPTION</p>
+                <h3>GRAHA RONATAMA</h3>
+                <p class="venue-time">Saturday, August 15th, 2026<br>01:00 PM - Onwards</p>
+                <p class="venue-address">Jl. Dahlia No. 16A, Depok, West Java</p>
+                <a href="https://www.google.com/maps/place/RONATAMA+Graha+%26+Convention+Hall/@-6.3959554,106.8246006,1120m/data=!3m2!1e3!4b1!4m6!3m5!1s0x2e69eb57d8abbde7:0xb59a2f861e3ff844!8m2!3d-6.3959554!4d106.8246006!16s%2Fg%2F11fkpbh3th?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-link">OPEN MAP</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section-padding" style="background: var(--milky-white);">
+        <div class="rsvp-wish-container">
+            <div class="rsvp-section">
+                <h2 class="serif section-title" style="margin-bottom: 30px; text-align: left;">RSVP</h2>
+                <form id="rsvp-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="guestName" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Will you attend?</label>
+                        <select id="attendance" required>
+                            <option value="yes">Joyfully Accept</option>
+                            <option value="no">Regretfully Decline</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Adults</label>
+                        <select id="adults">
+                            <option value="1">1 Person</option>
+                            <option value="2">2 Persons</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Children</label>
+                        <select id="children">
+                            <option value="0">0</option>
+                            <option value="1">1 Child</option>
+                            <option value="2">2 Children</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Wishes for Us</label>
+                        <textarea id="wishMsg" rows="4" placeholder="Write a message..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">SUBMIT & GET QR TICKET</button>
+                </form>
+            </div>
+            
+            <div class="wish-section">
+                <h2 class="serif section-title" style="margin-bottom: 30px; text-align: left;">Wishes</h2>
+                <div class="wish-scroll" id="wish-container">
+                    <div class="wish-wrapper">
+                        <div class="wish-item"><strong>John Doe</strong><br><span style="font-size: 0.9rem; color: var(--grey);">Wishing you a lifetime of love and happiness!</span></div>
+                        <div class="wish-item"><strong>Sarah Smith</strong><br><span style="font-size: 0.9rem; color: var(--grey);">Can't wait to celebrate your special day.</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="qr-modal">
+        <div class="modal-content ticket-modal">
+            <button id="close-modal" class="close-btn">&times;</button>
+            
+            <h2 class="ticket-title serif">E-TICKET INVITATION</h2>
+            <hr class="ticket-divider">
+            
+            <div class="qr-wrapper">
+                <img id="qr-code-img" src="" alt="QR Code">
+            </div>
+            
+            <h3 id="ticket-name" class="serif ticket-name">NAMA TAMU</h3>
+            <p id="ticket-pax" class="ticket-pax">2 People</p>
+            
+            <hr class="ticket-divider">
+            <p class="ticket-instruction">Please present this QR code at the reception desk.</p>
+        </div>
+    </div>
+
+    <section id="gift" class="section-padding">
+        <h2 class="serif section-title">Wedding Gift</h2>
+        <p style="text-align: center; margin-bottom: 40px; font-size: 0.9rem; color: var(--grey); max-width: 600px; margin-inline: auto;">Your blessing and presence are the greatest gifts we could receive. However, if you wish to honor us with a gift, you may do so through the details below.</p>
+        
+        <div class="gift-grid">
+            <div class="bank-card">
+                <div class="bank-name">BCA</div>
+                <div class="account-details">Name: Mario<br>Acc: <span id="bca-mario">5865304479</span></div>
+                <button class="btn-copy" onclick="copyText('bca-mario')">Copy Account Number</button>
+            </div>
+            <div class="bank-card">
+                <div class="bank-name">BCA</div>
+                <div class="account-details">Name: Niviasta<br>Acc: <span id="bca-nivi">5221465271</span></div>
+                <button class="btn-copy" onclick="copyText('bca-nivi')">Copy Account Number</button>
+            </div>
+            <div class="bank-card">
+                <div class="bank-name">GOPAY</div>
+                <div class="account-details">Name: Niviasta<br>No: <span id="gopay-nivi">081385186468</span></div>
+                <button class="btn-copy" onclick="copyText('gopay-nivi')">Copy Account Number</button>
+            </div>
+            <div class="bank-card">
+                <div class="bank-name">ADCB</div>
+                <div class="account-details">Name: Mario<br>IBAN: <span id="adcb-mario">AE690030013674020910001</span></div>
+                <button class="btn-copy" onclick="copyText('adcb-mario')">Copy Account Number</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Media Partners & Vendors</h4>
+                <ul>
+                    <li>CRV</li>
+                    <li>Joel Decoration</li>
+                    <li>Migunesia</li>
+                    <li>Catering</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 style="opacity:0;">Spacing</h4>
+                <ul>
+                    <li>Sate Babi</li>
+                    <li>Bakpao Gereja</li>
+                    <li>Graha Ronatama</li>
+                    <li>St. Paulus Catholic Church</li>
+                </ul>
+            </div>
+            <div class="footer-col music-col">
+                <div class="music-control" id="musicToggle">
+                    <span class="music-icon" id="musicIcon"></span>
+                    <span id="musicText">Play Music</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Mario & Niviasta. All Rights Reserved.</p>
+            <p>Developed for Mobile & Desktop</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
