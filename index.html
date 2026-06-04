@@ -11,6 +11,7 @@
     
     <link rel="stylesheet" href="style.css">
     
+    <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="script.js" defer></script>
@@ -21,6 +22,7 @@
         <source src="assets/audio/back-at-one.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- Global Music Control -->
     <button id="music-toggle" class="music-top-btn" style="display: none;">
         <svg id="icon-vol-on" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#de888d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
@@ -33,6 +35,7 @@
         </svg>
     </button>
 
+    <!-- Global Bottom Navigation -->
     <div id="bottom-nav-bar" class="bottom-nav-bar" style="display: none;">
         <div class="nav-links">
             <a href="#home">HOME</a>
@@ -43,12 +46,17 @@
         </div>
     </div>
 
+    <!-- Pemicu Scroll Pindah Halaman yang Mulus -->
     <div id="scroll-wrapper" style="display: none;">
-        <div class="scroll-trigger-home" style="height: 150vh;"></div>
-        <div class="scroll-trigger-bride" style="height: 150vh;"></div>
+        <div class="scroll-trigger-home" style="height: 100vh;"></div>
         <div class="scroll-trigger-groom" style="height: 100vh;"></div>
+        <div class="scroll-trigger-bride" style="height: 100vh;"></div>
+        <div class="scroll-trigger-gallery" style="height: 100vh;"></div>
     </div>
 
+    <!-- ========================================== -->
+    <!-- 1. WELCOME SCREEN                          -->
+    <!-- ========================================== -->
     <section class="welcome-container">
         <div class="parallax-layer layer-bg"></div>        
         <div class="parallax-layer layer-hole"></div>      
@@ -61,37 +69,59 @@
         </div>
     </section>
 
+    <!-- Kontainer Master untuk Halaman -->
     <div id="pages-container" style="display: none;">
 
-        <section id="page-groom" class="page-section groom-container">
-            <div class="home-bg-white"></div>
-            <div class="home-bg-blue"></div>
-            <div class="home-bg-pink"></div>
+        <!-- ========================================== -->
+        <!-- 5. GALLERY PAGE (Z-INDEX: 2)               -->
+        <!-- ========================================== -->
+        <section id="page-gallery" class="page-section gallery-container">
+            
+            <!-- DYNAMIC TIMELAPSE BACKGROUND (15 IMAGES) -->
+            <div class="gallery-bg-slider parallax-layer">
+                <div class="gal-slide" style="background-image: url('DSC00284.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00329.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00339.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00345.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00347.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00348.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00371.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00384.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00392.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00407.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00422.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00467.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00596.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00675.webp');"></div>
+                <div class="gal-slide" style="background-image: url('DSC00683.webp');"></div>
+            </div>
 
-            <h1 class="home-title groom-title-first">Mario</h1>
-            <img src="mario.png" alt="The Groom" class="groom-img">
-            <h1 class="home-title groom-title-last">Salomo</h1>
-
+            <div class="parallax-layer layer-hole"></div>      
+            <div class="parallax-layer layer-fg-left"></div>   
+            <div class="parallax-layer layer-fg-right"></div>  
+            
             <div class="home-content-overlay">
                 <div class="home-header">
-                    <p class="top-subtitle">The Groom</p>
+                    <p class="top-subtitle" style="color: #fff; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">Our Memories</p>
                 </div>
-                <div class="home-footer">
-                    <div class="footer-left">
-                        <h3>PARENTS</h3>
-                        <p>Mr. Nicolaas Rambing<br>& Mrs. Rambing</p>
-                    </div>
-                    <div class="footer-center">
-                        <p>- GUEST NAME -</p>
-                    </div>
-                    <div class="footer-right">
-                        <button class="see-more-btn">SEE MORE &mdash;</button>
-                        <p class="hashtag">@mariosalomo</p>
+                
+                <!-- RUNNING TEXT LOVE STORY -->
+                <div class="running-story-container">
+                    <div class="running-story-text">
+                        It all started with a simple hello, a tiny spark that unexpectedly ignited into a beautiful journey.<br><br>
+                        Mario, with his visionary mind and unwavering determination, found his absolute muse in Niviasta, an elegant soul who brought an entirely new warmth and color to his world.<br><br>
+                        Through endless lines of code, late-night conversations, and shared laughter, they built a strong foundation of trust and understanding.<br><br>
+                        Every sunset they watched together and every dream they whispered to each other wove their hearts closer, proving that two different paths were always meant to merge into one perfect story.<br><br>
+                        Now, hand in hand, they are ready to step into a lifetime of endless adventures.<br><br>
+                        As they say 'I do' on August 15, 2026, it is not just a celebration of a single day, but the grand beginning of their forever...
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ========================================== -->
+        <!-- 4. BRIDE PAGE (Z-INDEX: 3)                 -->
+        <!-- ========================================== -->
         <section id="page-bride" class="page-section bride-container">
             <div class="home-bg-white"></div>
             <div class="home-bg-blue"></div>
@@ -105,22 +135,55 @@
                 <div class="home-header">
                     <p class="top-subtitle">The Bride</p>
                 </div>
-                <div class="home-footer">
-                    <div class="footer-left">
-                        <h3>PARENTS</h3>
-                        <p>Mr. Adrinus Octan Yeremias Musak<br>& Mrs. Rita Herawati</p>
-                    </div>
-                    <div class="footer-center">
-                        <p>- GUEST NAME -</p>
-                    </div>
-                    <div class="footer-right">
-                        <button class="see-more-btn">SEE MORE &mdash;</button>
-                        <p class="hashtag">@nivinathalia</p>
+                
+                <div class="profile-footer">
+                    <div class="profile-text-content">
+                        <h3>MS. NIVIASTA NATHALIA MUSAK</h3>
+                        <p class="parents-info">Daughter of Mr. Adrinus Octan Yeremias Musak & Mrs. Rita Herawati</p>
+                        <p class="profile-desc">
+                            "An elegant soul radiating grace and warmth. 
+                            Stepping into this new chapter with an open heart, ready to embrace the magic of forever."
+                        </p>
+                        <a href="https://instagram.com/nivinathalia" target="_blank" class="instagram-link">@nivinathalia</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ========================================== -->
+        <!-- 3. GROOM PAGE (Z-INDEX: 4)                 -->
+        <!-- ========================================== -->
+        <section id="page-groom" class="page-section groom-container">
+            <div class="home-bg-white"></div>
+            <div class="home-bg-blue"></div>
+            <div class="home-bg-pink"></div>
+
+            <h1 class="home-title groom-title-first">Mario</h1>
+            <img src="mario.png" alt="The Groom" class="groom-img">
+            <h1 class="home-title groom-title-last">Salomo</h1>
+
+            <div class="home-content-overlay">
+                <div class="home-header">
+                    <p class="top-subtitle">The Groom</p>
+                </div>
+                
+                <div class="profile-footer">
+                    <div class="profile-text-content">
+                        <h3>MR. MARIO SALOMO NICOLAAS RAMBING</h3>
+                        <p class="parents-info">Son of Mr. Nicolaas Rambing & Mrs. Rambing</p>
+                        <p class="profile-desc">
+                            "A visionary developer with a heart as vast as his ambitions. 
+                            Ready to build a beautiful life and an inspiring future, one line of code at a time."
+                        </p>
+                        <a href="https://instagram.com/mariosalomo" target="_blank" class="instagram-link">@mariosalomo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 2. HOME PAGE (Z-INDEX: 5 - PALING ATAS)    -->
+        <!-- ========================================== -->
         <section id="page-home" class="page-section home-container">
             <div class="home-bg-white"></div>
             <div class="home-bg-blue"></div>

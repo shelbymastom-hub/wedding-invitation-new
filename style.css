@@ -12,7 +12,7 @@ body {
 }
 
 /* ========================================== */
-/* WELCOME SCREEN STYLES                      */
+/* WELCOME SCREEN & GALLERY PARALLAX          */
 /* ========================================== */
 .welcome-container {
     position: relative; width: 100vw; height: 100vh; display: flex;
@@ -28,6 +28,20 @@ body {
 .layer-hole { background-image: url('full-background.png'); background-size: cover; background-position: center; z-index: 2; }
 .layer-fg-left { background-image: url('kiri.png'); width: 60vw; left: -15vw; background-size: cover; background-position: right center; z-index: 3; }
 .layer-fg-right { background-image: url('kanan.png'); width: 60vw; left: auto; right: -15vw; background-size: cover; background-position: left center; z-index: 4; }
+
+/* DYNAMIC BACKGROUND SLIDER UNTUK GALLERY */
+.gallery-bg-slider {
+    z-index: 1; 
+    overflow: hidden; 
+}
+.gal-slide {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    /* FIX: Diganti jadi cover agar selalu full menutupi layar */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    will-change: transform, opacity;
+}
 
 .ui-content {
     position: relative; z-index: 10; text-align: center; display: flex;
@@ -46,7 +60,6 @@ body {
 /* ========================================== */
 /* GLOBAL UI ELEMENTS (NAV BAR & MUSIC)       */
 /* ========================================== */
-
 .music-top-btn {
     position: fixed; top: 25px; right: 25px; z-index: 100;
     background: transparent; border: none; cursor: pointer;
@@ -54,7 +67,6 @@ body {
 }
 .music-top-btn:hover { transform: scale(1.1); }
 
-/* Diperlebar max-width-nya jadi 550px agar menu GALLERY muat */
 .bottom-nav-bar {
     position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
     width: 90%; max-width: 550px; display: flex; justify-content: center;
@@ -71,7 +83,37 @@ body {
 .nav-links a:hover { color: #de888d; }
 
 /* ========================================== */
-/* PAGES CONTAINER (HOME, BRIDE, GROOM)       */
+/* RUNNING TEXT LOVE STORY CONTAINER          */
+/* ========================================== */
+.running-story-container {
+    position: absolute;
+    bottom: 12vh; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 700px;
+    height: 55vh; 
+    overflow: hidden;
+    z-index: 10;
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 95%);
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 95%);
+    pointer-events: none;
+}
+
+.running-story-text {
+    position: relative; 
+    width: 100%;
+    text-align: center;
+    color: #ffffff; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 2.2;
+    font-weight: 400;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+}
+
+/* ========================================== */
+/* PAGES CONTAINER LAYER Z-INDEX URUTAN       */
 /* ========================================== */
 .page-section {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
@@ -79,9 +121,11 @@ body {
     pointer-events: none; 
 }
 
+/* Urutan z-index yang benar */
 .home-container { z-index: 5; }
-.bride-container { z-index: 4; }
-.groom-container { z-index: 3; }
+.groom-container { z-index: 4; }
+.bride-container { z-index: 3; }
+.gallery-container { z-index: 2; } 
 
 .home-bg-white { position: absolute; top: 0; left: 0; width: 100%; height: 45%; background-color: #ffffff; z-index: 1; }
 .home-bg-blue { position: absolute; top: 45%; left: 0; width: 100%; height: 20%; background-color: #7ab3c6; z-index: 1; }
@@ -107,6 +151,7 @@ body {
 .home-header { text-align: center; padding-top: 25px; }
 .top-subtitle { font-size: 0.85rem; letter-spacing: 2px; color: #333; font-weight: 400; text-transform: uppercase; }
 
+/* 1. Footer Home (Format 3 Kolom) */
 .home-footer {
     display: flex; justify-content: space-between; align-items: center; 
     padding: 30px 50px; color: #fff; pointer-events: auto; height: 25%; 
@@ -124,11 +169,31 @@ body {
 }
 .hashtag { font-weight: 700; font-size: 1.1rem; letter-spacing: 1px; }
 
+/* 2. Footer Bride & Groom (Rata Kiri, Deskriptif) */
+.profile-footer {
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start; 
+    text-align: left; 
+    padding: 30px 50px; color: #fff; pointer-events: auto; height: 25%; 
+}
+
+.profile-text-content { width: 100%; text-align: left; }
+.profile-text-content h3 { font-weight: 700; letter-spacing: 2px; margin-bottom: 5px; font-size: 1.1rem; text-transform: uppercase; }
+.parents-info { font-weight: 600; font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 10px; color: rgba(255, 255, 255, 0.8); text-transform: uppercase;}
+.profile-desc { font-weight: 300; font-size: 0.8rem; line-height: 1.6; max-width: 600px; margin-bottom: 15px; font-style: italic; }
+
+.instagram-link {
+    color: #fff; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px;
+    display: inline-block; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.5); transition: border-color 0.3s ease;
+}
+.instagram-link:hover { border-color: #fff; }
+
 /* ========================================== */
 /* RESPONSIVE MOBILE ADJUSTMENT               */
 /* ========================================== */
 @media (max-width: 768px) {
     .layer-bg { background-size: 120%; background-position: 50% 25%; }
+    /* FIX: Memastikan slider gallery juga cover di mobile */
+    .gal-slide { background-size: cover; background-position: center; } 
     .layer-hole { background-size: auto 100%; background-position: 50% center; }
     .layer-fg-left { width: 70vw; left: -10vw; background-size: auto 100%; background-position: right center; }
     .layer-fg-right { width: 70vw; right: -10vw; background-size: auto 100%; background-position: left center; }
@@ -136,11 +201,13 @@ body {
     .ui-content { gap: 50px; }
     
     .music-top-btn { top: 15px; right: 15px; }
-    
-    /* Pengecilan font agar 5 menu tetap muat di mobile tanpa patah */
     .bottom-nav-bar { width: 95%; padding: 12px 20px; bottom: 15px; }
     .nav-links { gap: 5px; justify-content: space-between; width: 100%; }
     .nav-links a { font-size: 0.55rem; letter-spacing: 0.5px; }
+
+    /* Running Text Mobile Layout */
+    .running-story-container { width: 90%; height: 35vh; bottom: 10vh; }
+    .running-story-text { font-size: 0.75rem; line-height: 1.7; }
 
     .home-bg-white { height: 35%; }
     .home-bg-blue { top: 35%; height: 15%; }
@@ -161,10 +228,22 @@ body {
     .home-footer {
         height: 45%; flex-direction: column; justify-content: center;
         align-items: center; text-align: center; padding: 20px; gap: 20px;
+        padding-bottom: 60px; 
     }
     
     .footer-left h3 { margin-bottom: 5px; font-size: 0.9rem; }
     .footer-left p { line-height: 1.4; font-size: 0.65rem; }
     .footer-center p { font-size: 1.2rem; letter-spacing: 2px; }
     .footer-right { text-align: center; }
+
+    .profile-footer {
+        height: 45%; justify-content: center; align-items: flex-start;
+        text-align: left;
+        padding: 20px 25px; padding-bottom: 60px;
+    }
+    
+    .profile-text-content h3 { font-size: 0.95rem; margin-bottom: 3px; }
+    .parents-info { font-size: 0.6rem; margin-bottom: 8px; }
+    .profile-desc { font-size: 0.75rem; line-height: 1.5; margin-bottom: 15px; }
+    .instagram-link { font-size: 0.8rem; }
 }
